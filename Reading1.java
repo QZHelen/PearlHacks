@@ -45,12 +45,12 @@ public class Reading1 {
 	
 	public static void download(String fileName, String urlName){
 		try{
-			String ramsFileName = fileName; // The file that will be saved on your computer
-			URL ramslink = new URL(urlName);
+		//	String ramsFileName = fileName; // The file that will be saved on your computer
+			URL link = new URL(urlName);
 			// The file that you want to download
 
 			// Code to download
-			InputStream in = new BufferedInputStream(ramslink.openStream());
+			InputStream in = new BufferedInputStream(link.openStream());
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
 			byte[] buf = new byte[1024];
 			int n = 0;
@@ -61,7 +61,7 @@ public class Reading1 {
 			in.close();
 			byte[] response = out.toByteArray();
 
-			FileOutputStream fos = new FileOutputStream(ramsFileName);
+			FileOutputStream fos = new FileOutputStream(fileName);
 			fos.write(response);
 			fos.close();
 		} catch(Exception e){
